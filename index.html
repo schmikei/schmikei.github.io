@@ -1,4 +1,4 @@
-!doctype html>
+<!doctype html>
 <html class="no-js" lang="">
 
 <head>
@@ -11,7 +11,6 @@
   <link rel="manifest" href="site.webmanifest">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="apple-touch-icon" href="icon.png">
-
   <style>
   .fa {
     padding: 10px;
@@ -35,7 +34,6 @@
     background: #007bb5;
     color: white;
   }
-
   .fa-facebook {
     background: #3B5998;
     color: white;
@@ -43,35 +41,65 @@
   .fa:hover {
     opacity: 0.7;
   }
+
+  .sidenav {
+    height: 100%;
+    width: 145px;
+    position: fixed;
+    z-index: 1;
+    top: 45px;
+    left: 0;
+    background-color:#333F4E;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+
+  .sidenav a {
+    padding: 6px 6px 6px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+  }
+
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+
+  .main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+    margin-bottom: 30px;
+  }
+
+  #grad1 {
+    height: 500px;
+    background: blue; /* For browsers that do not support gradients */
+    background: linear-gradient(to right, #F8F8F8,#47525F ); /* Standard syntax (must be last) */
+  }
+
+
   body{
     margin: 0;
     padding:0;
-    background-color: #F8F8F8;
+    background: linear-gradient(to right, #F8F8F8,#47525F );
     font-family: Arial, Helvetica, sans-serif;
   }
   h2{
-    font-size: 130%;
-    background-color: #F8F8F8;
+    font-size: 280%;
     color: black;
     padding-top: 45px;
     text-align:center;
   }
   p{
-    background-color: #F8F8F8;
+    color: black;
+  }
+  p1{
     color: black;
     text-align:center;
   }
-  .column {
-    overflow: hidden;
-    flex: 1;
-    width: 33.33%;
-  }
+
 
   /* Clear floats after the columns */
-  .row:after {
-    display: flex;
-    clear: both;
-  }
   .topnav {
     background-color: #333F4E;
     overflow: hidden;
@@ -82,14 +110,14 @@
   .bottom {
     position: fixed;
     text-align: center;
-    bottom: 0px;
+    margin-left: 145px;
+    bottom: 0;
     width: 100%;
-
   }
-
 
   /* Style the links inside the navigation bar */
   .topnav a {
+    overflow: hidden;
     float: left;
     color: #F8F8F8;
     text-align: center;
@@ -100,7 +128,7 @@
 
   /* Change the color of links on hover */
   .topnav a:hover {
-    background-color: #DA513D;
+    background-color: #47525F;
   }
 
   /* Add a color to the active/current link */
@@ -115,43 +143,49 @@
 
 </head>
 
+
 <body>
   <!--[if lte IE 9]>
   <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
 
-  <div class="topnav">
+  <div class="sidenav">
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </div>
+ <div class="topnav">
     <a class="active" href="#home">Home</a>
   </div>
-  <div style="background-color:#F8F8F8;color:white;">
-    <h2 style = background-color: #F8F8F8; text-align: left;>Keith Schmitt</h2>
-    <p style = text-align:center; color:black; background-color: #F8F8F8>Hey Everyone! </p>
-    <p style = text-align:center; color:black; background-color: #F8F8F8>My name is Keith Schmitt and I am a current Computer Scientist that really enjoys Coffee, Converations, and Coding.</p>
-    <p style = text-align:center; color:black; background-color: #F8F8F8>I am a big proponent of Deep Neural Networks and I love to work with them in pytorch, stay tuned for a potential project :)</p>
-    <p style = text-align:center; color:black; background-color: #F8F8F8> This is my playground and launching point at writing some HTML and Javascript and testing out some cool elements of frontend development. </p>
-    <p style = text-align:center; color:black; background-color: #F8F8F8> Feel free to follow or getting connected to my social media down below.</p>
+  <div class="main">
+    <div>
+      <h2 style = background-color: #F8F8F8; text-align: left;>Keith Schmitt</h2>
+      <p style =  color:black;>Hey Everyone! </p>
+      <p style = color:black;>My name is Keith Schmitt and I am a current Computer Scientist that really enjoys Coffee, Converations, and Coding.</p>
+      <p style =  color:black;>I am a big proponent of Deep Neural Networks and I love to work with them in pytorch, stay tuned for a potential project :)</p>
+      <p style =  color:black;> This is my playground and launching point at writing some HTML and Javascript and testing out some cool elements of frontend development. </p>
+      <p style =  color:black; > Feel free to follow or get connected to my social media down below.</p>
+    </div>
   </div>
-  <bottom>
-    <h2 style =>Get Connected</h2>
-    <p><a href="https://www.instagram.com/schmittkeith/"   class="fa fa-instagram"></a>
-      <a href="https://www.facebook.com/keith.schmitt.967?ref=bookmarks" class = "fa fa-facebook"></a>
-      <a href= "https://www.linkedin.com/in/keith-schmitt-75a344135/"  class= "fa fa-linkedin"></a>
-      <a href="#" class = "fa fa-snapchat-ghost"></a></p>
-  </bottom>
-  </div>
-  <script src="js/vendor/modernizr-3.6.0.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" target = "_blank" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
-  <script src = "script.js"></script>
+<div class = "bottom">
+  <h2 style>Get Connected</h2>
+  <p style><a href="https://www.instagram.com/schmittkeith/"   class="fa fa-instagram"></a>
+    <a href="https://www.facebook.com/keith.schmitt.967?ref=bookmarks" class = "fa fa-facebook"></a>
+    <a href= "https://www.linkedin.com/in/keith-schmitt-75a344135/"  class= "fa fa-linkedin"></a>
+    <a href="#" class = "fa fa-snapchat-ghost"></a></p>
+</div>
+<script src="js/vendor/modernizr-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" target = "_blank" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+<script src = "script.js"></script>
 
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-  window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-  ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async defer></script>
 </body>
 
 </html>
