@@ -3,11 +3,13 @@
 <title>Keith Schmitt's Website</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src='main.js'></script>
+<script src='js/main.js'></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="icon" href="images/icon2.png">
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 body, html {
@@ -104,17 +106,17 @@ body, html {
   <!-- Navbar (sit on top) -->
   <div class="w3-top">
     <div class="w3-bar" id="myNavbar">
-      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right" style href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <div class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right" id ="menu" style= "color : #e6e6e6" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
         <i class="fa fa-bars"></i>
-      </a>
-      <a href="#home" class="w3-bar-item w3-button" style = "color: #e6e6e6">HOME</a>
+      </div>
+      <div href="#home" id = "home1" class="w3-bar-item w3-button" style = "color: #e6e6e6">HOME</div>
       <a href="#about" class="w3-bar-item w3-button w3-hide-small" style = "color: #e6e6e6"><i class="fa fa-user" ></i> ABOUT</a>
       <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small" style = "color: #e6e6e6"><i class="fa fa-th"></i> PORTFOLIO</a>
       <a href="#contact" class="w3-bar-item w3-button w3-hide-small" style = "color: #e6e6e6"><i class="fa fa-envelope"></i> CONTACT</a>
     </div>
 
     <!-- Navbar on small screens -->
-    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium" style = "color: #e6e6e6">
       <a href="#about" class="w3-bar-item w3-button"  style = "color: black" onclick="toggleFunction()">ABOUT</a>
       <a href="#portfolio" class="w3-bar-item w3-button"  style = "color: black"onclick="toggleFunction()">PORTFOLIO</a>
       <a href="#contact" class="w3-bar-item w3-button"  style = "color: black" onclick="toggleFunction()">CONTACT</a>
@@ -254,22 +256,6 @@ body, html {
           <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +1 989-915-5740<br>
           <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: schmikei@mail.gvsu.edu<br>
         </div>
-
-        <!--<p>Swing by for a cup of <i class="fa fa-coffee"></i>, or leave me a note:</p>
-        <form action="/action_page.php" target="_blank">
-        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-        <div class="w3-half">
-        <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-      </div>
-      <div class="w3-half">
-      <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
-    </div>
-  </div>
-  <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
-  <button class="w3-button w3-black w3-right w3-section" type="submit">
-  <i class="fa fa-paper-plane"></i> SEND MESSAGE
-</button>
-</form>-->
 </div>
 </div>
 </div>
@@ -301,22 +287,20 @@ body, html {
     marker.setMap(map);
   }
 
-  // Modal Image Gallery
-  function onClick(element) {
-    document.getElementById("img01").src = element.src;
-    document.getElementById("modal01").style.display = "block";
-    var captionText = document.getElementById("caption");
-    captionText.innerHTML = element.alt;
-  }
-
   // Change style of navbar on scroll
   window.onscroll = function() {myFunction()};
   function myFunction() {
     var navbar = document.getElementById("myNavbar");
+    var menu = document.getElementById("menu");
+    var home1 = document.getElementById("home1");
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
       navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+      menu.style.color = "black";
+      home1.style.color = "black";
     } else {
-      navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+      navbar.className = navbar.className.replace("w3-card w3-animate-top w3-white", "");
+      menu.style.color = "#e6e6e6"
+      home1.style.color = "#e6e6e6";
     }
   }
 
@@ -324,19 +308,18 @@ body, html {
   function toggleFunction() {
     var x = document.getElementById("navDemo");
     if (x.className.indexOf("w3-show") == -1) {
+      x.background = ""
       x.className += " w3-show";
     } else {
-      x.className = x.className.replace(" w3-show", "");
+      x.className = x.className.replace("w3-show", "");
+      x.style.color = "black";
     }
   }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+<!-- Controllers -->
 
-
-<!--
-To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
+<script src="js/Controllers/MainController.js"> </script>
 
 </body>
 </html>
